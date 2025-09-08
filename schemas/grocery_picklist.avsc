@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "GroceryPicklist",
+  "namespace": "com.demo",
+  "fields": [
+    { "name": "picklist_id", "type": "string" },
+    { "name": "order_id", "type": "string" },
+    { "name": "items_to_pick", "type": { "type": "array", "items": "string" } },
+    { "name": "assigned_picker", "type": "string" },
+    { "name": "created_time", "type": "string" }
+  ]
+}

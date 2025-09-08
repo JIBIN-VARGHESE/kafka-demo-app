@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "GroceryOrder",
+  "namespace": "com.demo",
+  "fields": [
+    { "name": "order_id", "type": "string" },
+    { "name": "customer_id", "type": "string" },
+    { "name": "items", "type": { "type": "array", "items": "string" } },
+    { "name": "order_total", "type": "double" },
+    { "name": "order_time", "type": "string" }
+  ]
+}
