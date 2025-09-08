@@ -8,6 +8,22 @@ import sys
 # --- Page Configuration ---
 st.set_page_config(layout="wide", page_title="Kafka Demo UI", page_icon="⚡")
 
+# --- Custom CSS for smaller headings ---
+st.markdown("""
+<style>
+.small-header {
+    font-size: 1.2rem !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.tiny-header {
+    font-size: 1rem !important;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # --- Session State Initialization ---
 if 'services' not in st.session_state:
@@ -91,7 +107,7 @@ def create_service_control(name, script_name, show_status=True):
 
     col1, col2 = st.columns([3, 1])
     with col1:
-        st.header(f"{service['icon']} {name.capitalize()} Service")
+        st.subheader(f"{service['icon']} {name.capitalize()} Service")
     if show_status:
         with col2:
             if is_running:
@@ -114,7 +130,7 @@ def create_service_control(name, script_name, show_status=True):
             clear_logs(name)
             st.rerun()
 
-    st.subheader("📄 Service Logs")
+    st.write("#### 📄 Service Logs")
     log_content = service["logs"] if service["logs"] else "No logs yet... Start the service to see output."
     st.code(log_content, language="bash")
 
@@ -134,7 +150,7 @@ with st.container(border=True):
     for col, service_name in zip([col1, col2, col3], services_to_display):
         with col:
             service = st.session_state.services[service_name]
-            st.markdown(f"### {service['icon']} {service_name.capitalize()}")
+            st.markdown(f"#### {service['icon']} {service_name.capitalize()}")
             is_running = service["process"] and service["process"].poll() is None
             if is_running:
                 st.success("● Running")
