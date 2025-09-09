@@ -9,7 +9,7 @@ from confluent_kafka.schema_registry.avro import AvroSerializer
 BOOTSTRAP_SERVERS = "<KAFKA_BOOTSTRAP_SERVERS>"
 SCHEMA_REGISTRY_URL = "<SCHEMA_REGISTRY_URL>"
 OAUTH_TOKEN_URL = "<OAUTH_TOKEN_URL>"
-CLIENT_ID = "4ac804a3-7edc-4212-95e2-22cca34a11c1"
+CLIENT_ID = "client_ID"
 CLIENT_SECRET = "<OAUTH_CLIENT_SECRET>"
 TOPIC = "grocery.orders.v1"
  
