@@ -6,7 +6,7 @@ from confluent_kafka.schema_registry.avro import AvroDeserializer
 BOOTSTRAP_SERVERS = "<KAFKA_BOOTSTRAP_SERVERS>"
 SCHEMA_REGISTRY_URL = "<SCHEMA_REGISTRY_URL>"
 OAUTH_TOKEN_URL = "<OAUTH_TOKEN_URL>"
-CLIENT_ID = "70526360-cab9-410d-82b4-218d547203f4"
+CLIENT_ID = "client_ID"
 CLIENT_SECRET = "<OAUTH_CLIENT_SECRET>"
 TOPIC = "grocery.picklist.v1"
 GROUP_ID = "picklist-consumer-group"
